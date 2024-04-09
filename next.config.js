@@ -4,6 +4,9 @@ const nextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com'], // Füge hier die Domänen hinzu
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
