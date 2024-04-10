@@ -10,7 +10,7 @@ export default function PlantList({ plants, handleToggleBookmark }) {
               <li key={plant.id}>
                 <h2>{plant.title}</h2>
                 <Link href={`/plant-details/${plant.slug}`}>
-                  <Image src={plant.picture} width={150} height={199} alt={plant.picture} />
+                  <Image src={plant.picture} width={150} height={199} alt={plant.picture} priority/>
                 </Link>
                 <button onClick={()=> handleToggleBookmark(plant.id)}>Fav</button>
               </li>
