@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function PlantDetails({ plant }) {
   const { title, description, location, watering, care, picture } = plant;
 
@@ -6,11 +8,11 @@ export default function PlantDetails({ plant }) {
       <h1>{title}</h1>
 
       <ul>
+        <Image src={plant.picture} alt={plant.title} width={150} height={199} />
         <li>{description}</li>
         <li>{location}</li>
         <li>{watering}</li>
         <li>{care}</li>
-        <img src={picture} alt={title} width={100} height={149} />
       </ul>
     </>
   );
