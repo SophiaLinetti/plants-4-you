@@ -1,5 +1,51 @@
 import { useState } from "react";
+import Link from "next/link";
 import styled from "styled-components";
+
+
+
+export default function Navigation() {
+  const [isNavigationVisible, setVisibleNavigation] = useState(false);
+
+  function toggleNavigation() {
+    setVisibleNavigation(!isNavigationVisible);
+  }
+
+  function handleLinkClick() {
+    setVisibleNavigation(false);
+  }
+
+  return (
+    <>
+      <nav>
+        <Container onClick={toggleNavigation}>
+          <ChangeBar1 $isOpen={isNavigationVisible} />
+          <ChangeBar2 $isOpen={isNavigationVisible} />
+          <ChangeBar3 $isOpen={isNavigationVisible} />
+        </Container>
+        {isNavigationVisible && (
+          <ul>
+            <li>
+              <Link href="/" onClick={handleLinkClick} />
+                Home
+            </li>
+
+            <li>
+              <Link href="/add-own-plant" onClick={handleLinkClick}/>
+                Add my own Plant
+            </li>
+
+            <li>
+              <Link href="/my-favorite-plants" onClick={handleLinkClick}/>
+                My favorite Plant
+            </li>
+          </ul>
+        )}
+      </nav>
+    </>
+  );
+}
+
 
 const Container = styled.div`
   display: inline-block;
@@ -27,48 +73,3 @@ const ChangeBar3 = styled(Bar)`
   transform: ${({ $isOpen }) =>
     $isOpen ? "translate(0, -11px) rotate(45deg)" : "none"};
 `;
-
-export default function Navigation() {
-  const [isNavigationVisible, setVisibleNavigation] = useState(false);
-
-  function toggleNavigation() {
-    setVisibleNavigation(!isNavigationVisible);
-  }
-
-  function handleLinkClick() {
-    setVisibleNavigation(false);
-  }
-
-  return (
-    <>
-      <nav>
-        <Container onClick={toggleNavigation}>
-          <ChangeBar1 $isOpen={isNavigationVisible} />
-          <ChangeBar2 $isOpen={isNavigationVisible} />
-          <ChangeBar3 $isOpen={isNavigationVisible} />
-        </Container>
-        {isNavigationVisible && (
-          <ul>
-            <li>
-              <a href="/" onClick={handleLinkClick}>
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a href="/add-own-plant" onClick={handleLinkClick}>
-                Add my own Plant
-              </a>
-            </li>
-
-            <li>
-              <a href="/my-favorite-plants" onClick={handleLinkClick}>
-                My favorite Plant
-              </a>
-            </li>
-          </ul>
-        )}
-      </nav>
-    </>
-  );
-}

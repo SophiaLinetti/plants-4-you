@@ -1,5 +1,39 @@
 import styled from "styled-components";
 
+
+export default function AddOwnPlant() {
+  return (
+    <>
+      <StyledHeading>Add my own Plant</StyledHeading>
+      <Wrapper>
+        <StyledForm>
+          <StyledLabel htmlFor="title">Plant-Name</StyledLabel>
+          <StyledInput type="text" id="title" name="title" required />
+
+          <StyledLabel htmlFor="description">Description</StyledLabel>
+          <StyledInput type="text" id="description" name="description" />
+
+          <StyledLabel htmlFor="location">Location</StyledLabel>
+          <StyledInput type="text" id="location" name="location" />
+
+          <StyledLabel htmlFor="watering">Watering Plants</StyledLabel>
+          <StyledInput type="text" id="watering" name="watering" />
+
+          <StyledLabel htmlFor="care">Care</StyledLabel>
+          <StyledInput type="text" id="care" name="care" />
+
+          <StyledLabel htmlFor="picture">Picture</StyledLabel>
+          <StyledInput type="link" id="picture" name="picture" />
+
+          <StyledButton type="submit">Save Plant</StyledButton>
+          <StyledButton type="button">Cancel</StyledButton>
+        </StyledForm>
+      </Wrapper>
+    </>
+  );
+}
+
+
 const StyledForm = styled.form`
   display: grid;
   gap: 1rem;
@@ -42,35 +76,3 @@ const Wrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
-
-export default function AddOwnPlant() {
-  return (
-    <>
-      <StyledHeading>Add my own Plant</StyledHeading>
-      <Wrapper>
-        <StyledForm>
-          <StyledLabel htmlFor="title">Plant-Name</StyledLabel>
-          <StyledInput type="text" id="title" name="title" required />
-
-          <StyledLabel htmlFor="description">Description</StyledLabel>
-          <StyledInput type="text" id="description" name="description" />
-
-          <StyledLabel htmlFor="location">Location</StyledLabel>
-          <StyledInput type="text" id="location" name="location" />
-
-          <StyledLabel htmlFor="watering">Watering Plants</StyledLabel>
-          <StyledInput type="text" id="watering" name="watering" />
-
-          <StyledLabel htmlFor="care">Care</StyledLabel>
-          <StyledInput type="text" id="care" name="care" />
-
-          <StyledLabel htmlFor="picture">Picture</StyledLabel>
-          <StyledInput type="link" id="picture" name="picture" />
-
-          <StyledButton type="submit">Save Plant</StyledButton>
-          <StyledButton type="button">Cancel</StyledButton>
-        </StyledForm>
-      </Wrapper>
-    </>
-  );
-}
