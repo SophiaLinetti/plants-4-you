@@ -26,18 +26,21 @@ export default function Navigation() {
         {isNavigationVisible && (
           <ul>
             <li>
-              <Link href="/" onClick={handleLinkClick} />
+              <Link href="/" onClick={handleLinkClick}>
                 Home
+              </Link>
             </li>
 
             <li>
-              <Link href="/add-own-plant" onClick={handleLinkClick}/>
+              <Link href="/add-own-plant" onClick={handleLinkClick}>
                 Add my own Plant
+                </Link>
             </li>
 
             <li>
-              <Link href="/my-favorite-plants" onClick={handleLinkClick}/>
+              <Link href="/my-favorite-plants" onClick={handleLinkClick}>
                 My favorite Plant
+                </Link>
             </li>
           </ul>
         )}
